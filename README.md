@@ -1,7 +1,7 @@
 # test-login
 Laravel Multi Login Authentication
 
-# Database Setup
+# database Setup
 Make sure you create databse and change the database config inside .env file or better still
 databse name for this test is called "custom_db", you can create yours to fit in.
 
