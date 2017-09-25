@@ -39,11 +39,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-12">
                 <form method="post" action="/create-user">
                     {{ csrf_field() }}
                     <div class="form-control">
-                        <h1>the add form goes here</h1>
+                        <div class="input-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="name" class="form-control" required="" value="{{ old('name') }}">
+                        </div>
                     </div>
 
                 </form>
