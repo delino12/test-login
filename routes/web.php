@@ -15,14 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin/install', 'CreateAdminController@createAdmin');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/admin', 'AdminController@index');
-
 
 Route::prefix('admin')->group(function (){
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-	Route::get('/', 'Auth\AdminLoginController@showLoginForm')->name('admin.dashboard');
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+
+	// app
+	Route::get('/admin/add-user', 'AdminController@createUser');
+
 });
